@@ -886,6 +886,28 @@ def ifind_data_volume() -> str:
 
 
 # ---------------------------------------------------------------------------
+# Error message query
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+def ifind_error_message(
+    error_code: int,
+) -> str:
+    """Look up the meaning of an iFinD API error code (错误信息查询).
+
+    Use this when an API call returns an error code to understand what went wrong.
+
+    Args:
+        error_code: The numeric error code returned by iFinD API. Examples:
+            -1010 (token expired), -4001 (no data), -4203 (wrong format), etc.
+    """
+    body = {"errorcode": error_code}
+    result = _post("get_error_message", body)
+    return _format_response(result)
+
+
+# ---------------------------------------------------------------------------
 # Usage query tool
 # ---------------------------------------------------------------------------
 

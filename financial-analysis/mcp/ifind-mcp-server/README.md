@@ -42,6 +42,8 @@ The server is configured in `financial-analysis/.mcp.json` as a stdio-based MCP 
 
 ## Available Tools
 
+### Core Data Tools
+
 | Tool | iFinD API | HTTP Endpoint | Description |
 |------|-----------|---------------|-------------|
 | `ifind_basic_data` | `THS_BD` | `/basic_data_service` | Cross-sectional fundamental data (financials, valuation, company info) |
@@ -52,7 +54,35 @@ The server is configured in `financial-analysis/.mcp.json` as a stdio-based MCP 
 | `ifind_snapshot` | `THS_SS` | `/snap_shot` | Intraday snapshot / order book |
 | `ifind_data_pool` | `THS_DP` | `/data_pool` | Dataset queries (index constituents, blocks, reports) |
 | `ifind_edb` | `THS_EDB` | `/edb_service` | Economic database (GDP, CPI, PMI, rates, FX) |
-| `ifind_usage` | `THS_DataStatistics` | `/data_statistics` | API usage statistics and local call log |
+
+### Fund Valuation Tools
+
+| Tool | iFinD API | HTTP Endpoint | Description |
+|------|-----------|---------------|-------------|
+| `ifind_fund_valuation` | `THS_realTimeValuation` | `/fund_valuation` | Real-time fund NAV estimation (minute-level) |
+| `ifind_final_fund_valuation` | — | `/final_fund_valuation` | Daily fund valuation vs actual NAV comparison |
+
+### Date Utility Tools
+
+| Tool | iFinD API | HTTP Endpoint | Description |
+|------|-----------|---------------|-------------|
+| `ifind_date_query` | `THS_DateQuery` | `/get_trade_dates` | Query trading dates for any exchange |
+| `ifind_date_offset` | `THS_DateOffset` | `/get_trade_dates` | Calculate date offset by N trading/calendar days |
+
+### Screening & Lookup Tools
+
+| Tool | iFinD API | HTTP Endpoint | Description |
+|------|-----------|---------------|-------------|
+| `ifind_smart_stock_picking` | `THS_WCQuery` | `/smart_stock_picking` | Wencai AI natural-language stock screener |
+| `ifind_get_thscode` | `THS_toTHSCODE` | `/get_thscode` | Convert security code/name to iFinD thscode format |
+
+### Account & Diagnostics Tools
+
+| Tool | iFinD API | HTTP Endpoint | Description |
+|------|-----------|---------------|-------------|
+| `ifind_data_volume` | — | `/get_data_volume` | Official account data quota usage |
+| `ifind_error_message` | — | `/get_error_message` | Look up iFinD error code meanings |
+| `ifind_usage` | — | (local) | Local API call log and usage statistics |
 
 ## Security Codes Format
 
