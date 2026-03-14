@@ -46,8 +46,8 @@
     },
     "wind": {
       "type": "stdio",
-      "command": "python",
-      "args": ["financial-analysis/mcp/wind-mcp-server/server.py"]
+      "command": "/Users/liuming/git/financial-services-plugins/financial-analysis/mcp/wind-mcp-server/.venv/bin/python",
+      "args": ["/Users/liuming/git/financial-services-plugins/financial-analysis/mcp/wind-mcp-server/server.py"]
     }
   }
 }
