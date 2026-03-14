@@ -573,16 +573,32 @@ def ifind_edb(
 
     Args:
         indicators: EDB indicator codes, semicolon-separated. Common indicators:
-            - China GDP: "M001620247"
-            - China CPI YoY: "M002822183"
-            - China PPI YoY: "M002822193"
-            - China PMI Manufacturing: "M002827382"
-            - M2 YoY: "M001622252"
-            - LPR 1Y: "M006000702"
-            - LPR 5Y: "M006000703"
-            - USD/CNY: "M001622930"
-            - US CPI YoY: "G009035746"
-            - US GDP QoQ: "G009033447"
+            China — Growth & Output:
+            - GDP (current price, 亿元): "M001620247"
+            - GDP YoY (%): "M002822183"
+            - Non-manufacturing PMI: "M002811179"
+            China — Prices:
+            - CPI YoY (%): "M002826730"
+            - CPI MoM (%): "M002826785"
+            - CPI Non-food YoY (%): "M002826748"
+            - PPI YoY (%): "M002826865"
+            - PPI Producer Goods YoY (%): "M002826873"
+            - PPI Consumer Goods YoY (%): "M002826877"
+            China — Trade:
+            - Exports YoY (%, USD): "M002808932"
+            - Imports YoY (%, USD): "M002808933"
+            - Trade Total YoY (%, USD): "M002808931"
+            China — Interest Rates:
+            - SHIBOR Overnight (%): "M002816448"
+            - SHIBOR 1W (%): "M002816449"
+            - SHIBOR 3M (%): "M002816452"
+            - SHIBOR 1Y (%): "M002816455"
+            - Reverse Repo 7D Rate (%): "M002816548"
+            - Reserve Requirement Ratio Large (%): "M002816518"
+            Note: Indicator IDs for Manufacturing PMI, M2/M1 YoY, LPR,
+            USD/CNY, Social Financing, and US macro indicators need to be
+            looked up in iFinD terminal (Tools > Data Interface > Indicator
+            ID Query). The codes are NOT the same as Wind EDB codes.
         start_date: Start date in "YYYY-MM-DD" format
         end_date: End date in "YYYY-MM-DD" format
     """
